@@ -1,12 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp.dll:
-    - G2ControllerAdjuster
-    - XRDeviceDetector
     Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputActionAsset
+    - UnityEngine.InputSystem.InputActionReference
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    - UnityEngine.InputSystem.XR.TrackedPoseDriver
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.CoreUtils.dll:
@@ -14,8 +14,9 @@ ScriptsOnlyBuild:
     Unity.XR.Interaction.Toolkit.Editor.dll:
     - UnityEditor.XR.Interaction.Toolkit.XRInteractionEditorSettings
     Unity.XR.Interaction.Toolkit.dll:
+    - UnityEngine.XR.Interaction.Toolkit.ActionBasedController
+    - UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
     - UnityEngine.XR.Interaction.Toolkit.InteractionLayerSettings
-    - UnityEngine.XR.Interaction.Toolkit.XRController
     - UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
     - UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual
     - UnityEngine.XR.Interaction.Toolkit.XRRayInteractor
@@ -43,8 +44,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEngine.SpatialTracking.dll:
-    - UnityEngine.SpatialTracking.TrackedPoseDriver
     UnityEngine.UI.dll:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.Image
@@ -86,41 +85,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1600}
     - Class: 114
+      Script: {instanceID: 1852}
+    - Class: 114
       Script: {instanceID: 1916}
     - Class: 114
       Script: {instanceID: 2272}
     - Class: 114
-      Script: {instanceID: 2478}
+      Script: {instanceID: 2588}
     - Class: 114
       Script: {instanceID: 2748}
     - Class: 114
       Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 3272}
+      Script: {instanceID: 3274}
     - Class: 114
-      Script: {instanceID: 3296}
+      Script: {instanceID: 3300}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 3314}
     - Class: 114
-      Script: {instanceID: 3536}
+      Script: {instanceID: 3540}
     - Class: 114
-      Script: {instanceID: 3870}
+      Script: {instanceID: 3874}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 4392}
+      Script: {instanceID: 4396}
     - Class: 114
-      Script: {instanceID: 4470}
+      Script: {instanceID: 4398}
     - Class: 114
-      Script: {instanceID: 4566}
+      Script: {instanceID: 4474}
     - Class: 114
-      Script: {instanceID: 4584}
+      Script: {instanceID: 4570}
     - Class: 114
-      Script: {instanceID: 5284}
+      Script: {instanceID: 4588}
     - Class: 114
-      Script: {instanceID: 18626}
+      Script: {instanceID: 5162}
     - Class: 114
-      Script: {instanceID: 18638}
+      Script: {instanceID: 5288}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -472,6 +473,12 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: G2ControllerAdjuster
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -518,6 +525,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.PicoXR.Editor.dll
     namespaceName: 
     className: PXR_SDKSettingAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: XRDeviceDetector
   - hash:
       serializedVersion: 2
       Hash: 5d19e6c33aaa5af5d291b5ae498291b2
@@ -1174,7 +1187,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: febe2d7bb0ecaa045be68e2635654b9c
+      Hash: c5d888b5cab4510cc528023b52ea57ee
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit.UI
     className: XRUIInputModule
@@ -1184,19 +1197,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.PicoXR.dll
     namespaceName: Unity.XR.PXR
     className: PXR_UIDropZone
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: XRDeviceDetector
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: G2ControllerAdjuster
   platform: 13
   scenePathNames:
   - Assets/Scenes/NewTest.unity
-  playerPath: C:/Users/orlam/OneDrive/Desktop/Save File/SyncVR/Tester Project/Builds/NewTest_001.apk
+  playerPath: C:/Users/orlam/OneDrive/Desktop/Save File/SyncVR/Tester Project/Builds/NewTest_003.apk
