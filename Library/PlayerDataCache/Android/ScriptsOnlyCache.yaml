@@ -4,9 +4,12 @@ ScriptsOnlyBuild:
     - G2ControllerAdjuster
     - XRDeviceDetector
     Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputActionAsset
+    - UnityEngine.InputSystem.InputActionReference
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    - UnityEngine.InputSystem.XR.TrackedPoseDriver
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.CoreUtils.dll:
@@ -14,8 +17,12 @@ ScriptsOnlyBuild:
     Unity.XR.Interaction.Toolkit.Editor.dll:
     - UnityEditor.XR.Interaction.Toolkit.XRInteractionEditorSettings
     Unity.XR.Interaction.Toolkit.dll:
+    - UnityEngine.XR.Interaction.Toolkit.ActionBasedController
+    - UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
     - UnityEngine.XR.Interaction.Toolkit.InteractionLayerSettings
     - UnityEngine.XR.Interaction.Toolkit.XRController
+    - UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor
+    - UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable
     - UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
     - UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual
     - UnityEngine.XR.Interaction.Toolkit.XRRayInteractor
@@ -50,7 +57,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/NewTest.unity:
+    Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -69,7 +76,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -82,50 +93,66 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1478}
     - Class: 114
-      Script: {instanceID: 1546}
+      Script: {instanceID: 1548}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1836}
     - Class: 114
-      Script: {instanceID: 1916}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 2272}
+      Script: {instanceID: 2444}
     - Class: 114
-      Script: {instanceID: 2478}
+      Script: {instanceID: 2554}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2712}
     - Class: 114
-      Script: {instanceID: 2812}
+      Script: {instanceID: 3074}
     - Class: 114
-      Script: {instanceID: 3272}
+      Script: {instanceID: 3224}
     - Class: 114
-      Script: {instanceID: 3296}
+      Script: {instanceID: 3258}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 3814}
     - Class: 114
-      Script: {instanceID: 3536}
+      Script: {instanceID: 3902}
     - Class: 114
-      Script: {instanceID: 3870}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 4074}
     - Class: 114
-      Script: {instanceID: 4392}
+      Script: {instanceID: 4294}
     - Class: 114
-      Script: {instanceID: 4470}
+      Script: {instanceID: 4296}
     - Class: 114
-      Script: {instanceID: 4566}
+      Script: {instanceID: 4370}
     - Class: 114
-      Script: {instanceID: 4584}
+      Script: {instanceID: 4482}
     - Class: 114
-      Script: {instanceID: 5284}
+      Script: {instanceID: 5036}
     - Class: 114
-      Script: {instanceID: 18626}
+      Script: {instanceID: 17260}
     - Class: 114
-      Script: {instanceID: 18638}
+      Script: {instanceID: 17266}
+    - Class: 114
+      Script: {instanceID: 18042}
+    - Class: 114
+      Script: {instanceID: 18064}
+    - Class: 114
+      Script: {instanceID: 18072}
+    - Class: 114
+      Script: {instanceID: 18088}
+    - Class: 114
+      Script: {instanceID: 18094}
+    - Class: 114
+      Script: {instanceID: 18112}
+    - Class: 114
+      Script: {instanceID: 18120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -196,12 +223,6 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_FPS
-  - hash:
-      serializedVersion: 2
       Hash: 87e6cfc8015337aef5fa238bd355b16f
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit
@@ -250,12 +271,6 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_Loader
-  - hash:
-      serializedVersion: 2
       Hash: 9b06583966b5c25325233c4ef1ab1fd4
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.HID.Editor
@@ -280,12 +295,6 @@ ScriptsOnlyBuild:
     className: ActionBasedController
   - hash:
       serializedVersion: 2
-      Hash: 14ec2b96187cba620b3f589a67f57df0
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: DemoController
-  - hash:
-      serializedVersion: 2
       Hash: 300fd99066f8c288e85f5e81ce65fe34
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -296,12 +305,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit
     className: XRInteractorLineVisual
-  - hash:
-      serializedVersion: 2
-      Hash: 0f5daded385f664048693785d70650ab
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_OverLay
   - hash:
       serializedVersion: 2
       Hash: e45b415676dcdcd35e8f10146c47fea6
@@ -320,12 +323,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 28d07916827a0ba7d7a3081df04d9833
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_PlatformSetting
   - hash:
       serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
@@ -412,12 +409,6 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: bac1bc530075edd7e3c673836b7b5012
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_ProjectSetting
-  - hash:
-      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -454,12 +445,6 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 6d64283f28a7c2acbbe5acb270fdc7cf
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_Settings
-  - hash:
-      serializedVersion: 2
       Hash: 1f880cc188f7f5eb5592d4bf4f57fef5
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit
@@ -470,6 +455,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: G2ControllerAdjuster
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -514,22 +505,10 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 0c7c74f37428a410cdb9292d7aacccd9
-    assemblyName: Unity.XR.PicoXR.Editor.dll
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PXR_SDKSettingAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 5d19e6c33aaa5af5d291b5ae498291b2
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_PassThrough
-  - hash:
-      serializedVersion: 2
-      Hash: f0c904c07ad49a5e32fedefeaeaed823
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_Manager
+    className: XRDeviceDetector
   - hash:
       serializedVersion: 2
       Hash: 7e533dda29d14de76e6229b17f29e5c1
@@ -568,22 +547,10 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 8e1c0cd52c7ef0a95b25813ac9d7a950
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: 
-    className: PXR_UICanvas
-  - hash:
-      serializedVersion: 2
       Hash: 3f0e2dacb7626b1f062c28b370a3512b
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit
     className: ActionBasedSnapTurnProvider
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_ObjImporter
   - hash:
       serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
@@ -596,12 +563,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
-  - hash:
-      serializedVersion: 2
-      Hash: d6db5a56811f23aea18af58ed87a6fd1
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_TouchPadEffects
   - hash:
       serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
@@ -632,12 +593,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_OverlayManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -676,34 +631,16 @@ ScriptsOnlyBuild:
     className: InputActionImporterEditor
   - hash:
       serializedVersion: 2
-      Hash: 1eb9aed3cd6453fbc580cf51127908af
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_CallbackRunner
-  - hash:
-      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_ControllerKeyTips
-  - hash:
-      serializedVersion: 2
       Hash: 76aef43e801605d1829c8805eeee135c
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem
     className: InputActionReference
-  - hash:
-      serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: 
-    className: PXR_UIGraphicRaycaster
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -796,12 +733,6 @@ ScriptsOnlyBuild:
     className: XRDirectInteractor
   - hash:
       serializedVersion: 2
-      Hash: d674ca8160225860299622fee1e8aa8e
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_ControllerKeyEffects
-  - hash:
-      serializedVersion: 2
       Hash: 8ab9295d94483c961936d82d233d3df2
     assemblyName: Unity.XR.Management.dll
     namespaceName: UnityEngine.XR.Management
@@ -812,12 +743,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 8ced7bf596b76066bae3429026b9fa33
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_InputModule
   - hash:
       serializedVersion: 2
       Hash: 10de116849796cda8d61ea9067c72915
@@ -898,12 +823,6 @@ ScriptsOnlyBuild:
     className: TeleportationProvider
   - hash:
       serializedVersion: 2
-      Hash: 6cce6b170969bc2921dccd54a9acdd0c
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_ControllerBattery
-  - hash:
-      serializedVersion: 2
       Hash: cd0ecdca0166232906c6f2df9dddc3d3
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.Editor
@@ -926,18 +845,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.Editor
     className: InputDebuggerWindow
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: InputManager
-  - hash:
-      serializedVersion: 2
-      Hash: 3d7a96f7eb225d21a4e97ae13b67a0d0
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_ScreenFade
   - hash:
       serializedVersion: 2
       Hash: a6c29e92dd6fcd5262c7189a67722496
@@ -1024,18 +931,6 @@ ScriptsOnlyBuild:
     className: LocomotionSystem
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: LoadingRatation
-  - hash:
-      serializedVersion: 2
-      Hash: e96af23e6e4708fd0f9871a1e6ab7f22
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_UIDraggableItem
-  - hash:
-      serializedVersion: 2
       Hash: 893dbdbfe611d62e230a686ea89f1efd
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
@@ -1066,12 +961,6 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: 
-    className: PXR_SQPLoader
-  - hash:
-      serializedVersion: 2
       Hash: 426e5bd616852254b77531cd1a8e29b6
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.OnScreen
@@ -1084,22 +973,10 @@ ScriptsOnlyBuild:
     className: XRDeviceSimulator
   - hash:
       serializedVersion: 2
-      Hash: 9a1214a8063c10e9a1c0f4306258602a
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_ControllerLoader
-  - hash:
-      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: Callback
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -1126,12 +1003,6 @@ ScriptsOnlyBuild:
     className: InputSystemObject
   - hash:
       serializedVersion: 2
-      Hash: 7b152d8e27734c1306607f1854ccc3e1
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: 
-    className: PXR_OverlayExternalSurfaceDemo
-  - hash:
-      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1142,12 +1013,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem
     className: PlayerInputManager
-  - hash:
-      serializedVersion: 2
-      Hash: d092e25e6c6df7270b252804aa308788
-    assemblyName: Unity.XR.PicoXR.dll
-    namespaceName: Unity.XR.PXR
-    className: PXR_UIPointer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1183,20 +1048,182 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.XR.PicoXR.dll
     namespaceName: Unity.XR.PXR
+    className: PXR_Loader
+  - hash:
+      serializedVersion: 2
+      Hash: f0c904c07ad49a5e32fedefeaeaed823
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_Manager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_FPS
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_OverlayManager
+  - hash:
+      serializedVersion: 2
+      Hash: 6cce6b170969bc2921dccd54a9acdd0c
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_ControllerBattery
+  - hash:
+      serializedVersion: 2
+      Hash: 8e1c0cd52c7ef0a95b25813ac9d7a950
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: 
+    className: PXR_UICanvas
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_ObjImporter
+  - hash:
+      serializedVersion: 2
+      Hash: 0c7c74f37428a410cdb9292d7aacccd9
+    assemblyName: Unity.XR.PicoXR.Editor.dll
+    namespaceName: 
+    className: PXR_SDKSettingAsset
+  - hash:
+      serializedVersion: 2
+      Hash: d092e25e6c6df7270b252804aa308788
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_UIPointer
+  - hash:
+      serializedVersion: 2
+      Hash: 1eb9aed3cd6453fbc580cf51127908af
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_CallbackRunner
+  - hash:
+      serializedVersion: 2
+      Hash: d6db5a56811f23aea18af58ed87a6fd1
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_TouchPadEffects
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: 
+    className: PXR_SQPLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 14ec2b96187cba620b3f589a67f57df0
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: DemoController
+  - hash:
+      serializedVersion: 2
+      Hash: 5d19e6c33aaa5af5d291b5ae498291b2
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_PassThrough
+  - hash:
+      serializedVersion: 2
+      Hash: bac1bc530075edd7e3c673836b7b5012
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_ProjectSetting
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_ControllerKeyTips
+  - hash:
+      serializedVersion: 2
+      Hash: 6d64283f28a7c2acbbe5acb270fdc7cf
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_Settings
+  - hash:
+      serializedVersion: 2
+      Hash: 0f5daded385f664048693785d70650ab
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_OverLay
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: InputManager
+  - hash:
+      serializedVersion: 2
+      Hash: 9a1214a8063c10e9a1c0f4306258602a
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_ControllerLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
     className: PXR_UIDropZone
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+      Hash: 28d07916827a0ba7d7a3081df04d9833
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_PlatformSetting
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: Unity.XR.PicoXR.dll
     namespaceName: 
-    className: XRDeviceDetector
+    className: PXR_UIGraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 3d7a96f7eb225d21a4e97ae13b67a0d0
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_ScreenFade
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: LoadingRatation
+  - hash:
+      serializedVersion: 2
+      Hash: d674ca8160225860299622fee1e8aa8e
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_ControllerKeyEffects
+  - hash:
+      serializedVersion: 2
+      Hash: e96af23e6e4708fd0f9871a1e6ab7f22
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_UIDraggableItem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: Callback
+  - hash:
+      serializedVersion: 2
+      Hash: 7b152d8e27734c1306607f1854ccc3e1
+    assemblyName: Unity.XR.PicoXR.dll
     namespaceName: 
-    className: G2ControllerAdjuster
+    className: PXR_OverlayExternalSurfaceDemo
+  - hash:
+      serializedVersion: 2
+      Hash: 8ced7bf596b76066bae3429026b9fa33
+    assemblyName: Unity.XR.PicoXR.dll
+    namespaceName: Unity.XR.PXR
+    className: PXR_InputModule
   platform: 13
   scenePathNames:
-  - Assets/Scenes/NewTest.unity
-  playerPath: C:/Users/orlam/OneDrive/Desktop/Save File/SyncVR/Tester Project/Builds/NewTest_001.apk
+  - Assets/Scenes/SampleScene.unity
+  playerPath: /Users/guillaume/Documents/VR/VRSetUp/VR test.apk
