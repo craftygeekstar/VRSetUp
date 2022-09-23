@@ -11,7 +11,11 @@
     "com.unity.xr.interaction.toolkit": "2.1.0-pre.1",
     "com.unity.xr.management": "4.2.1",
     "com.unity.xr.mock-hmd": "1.3.0-preview.1",
+<<<<<<< Updated upstream
     "com.unity.xr.picoxr": "file:C:/Users/orlam/Downloads/PicoXR_Platform_SDK-1.2.5_B81/PicoXR_Platform_SDK-1.2.5_B81",
+=======
+    "com.unity.xr.picoxr": "file:C:/Users/orlam/Desktop/Save File/SyncVR/Downloads/PicoXR_Platform_SDK-1.2.5_B81/PicoXR_Platform_SDK-1.2.5_B81",
+>>>>>>> Stashed changes
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
